@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.jogos',
     'apps.personagens',
+    'apps.fases',
 ]
 
 MIDDLEWARE = [
