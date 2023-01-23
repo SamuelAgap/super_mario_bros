@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-# Create your views here.
+
+def opa(request):
+    return HttpResponse('Opa eai, to em fases')
+
+
