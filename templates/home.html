@@ -2,34 +2,41 @@
 
 {% block title %} Home | Super Mario Bros {% endblock %}
 
+{% load static %}
+
 {% block main %}
+
+    <style>
+        .centro {
+            text-align: center;
+        }
+    </style>
+
     <div class="row">
     {%for jogo in jogo_list %}
         {% if forloop.counter == 1 %}
-            <div class="card mb-4">
-                <a href="#!">
-                    {% load static %}
-                    <img class="card-img-top" src="{% static 'images/bk-home.png' %}" alt="...">
-                </a>
+            <div class="card mb-4 centro">
+                <img class="card-img-top" src="{{ jogo.imagem.url }}" alt="...">
                 <div class="card-body">
-                    <div class="small text-muted">January 1, 2022</div>
+                    <div class="small text-muted">{{ jogo.ano }}</div>
                     <h2 class="card-title">{{ jogo }}</h2>
                     <p class="card-text">{{ jogo.descricao }}</p>
+                    <p><strong>Estilo:</strong> {{ jogo.estilo }}</p>
+                    <p><strong>Cópias vendidas:</strong> {{ jogo.vendas }}</p>
                 </div>
             </div>
         {%else%}
 
         <div class="col-lg-3">
             <!-- Blog post-->
-            <div class="card mb-4">
-                <a href="#!">
-                    <img class="card-img-top" src="{% static 'images/bk-home.png' %}" alt="...">
-                </a>
+            <div class="card mb-4 centro">
+                <img class="card-img-top" src="{{ jogo.imagem.url }}">
                 <div class="card-body">
                     <div class="small text-muted">{{ jogo.ano }}</div>
-                    <a href=""><h2 class="card-title h4">{{ jogo }}</h2></a>
+                    <h2 class="card-title h4">{{ jogo }}</h2>
                     <p class="card-text">{{ jogo.descricao }}</p>
                     <p><strong>Estilo:</strong> {{ jogo.estilo }}</p>
+                    <p><strong>Cópias vendidas:</strong> {{ jogo.vendas }}</p>
                 </div>
             </div>
         </div>

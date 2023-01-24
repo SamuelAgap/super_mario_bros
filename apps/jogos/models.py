@@ -8,6 +8,7 @@ class Jogo(models.Model):
     vendas = models.CharField(max_length=100)
     estilo = models.CharField(max_length=100)
     descricao = models.CharField(max_length=100)
+    imagem = models.ImageField(max_length=100)
 
     def __str__(self):
         return self.nome
