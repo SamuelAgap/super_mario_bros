@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome do Personagem</th>
+            <th scope="col">Descrição do Personagem</th>
+            <th scope="col">---------</th>
+        </tr>
+    </thead>
+    {% for personagem in object_list %}
+    <tbody>
+        <tr>
+            <td>{{ personagem.id }}</td>
+            <th scope="row">
+                <a href="{% url 'update_personagens' personagem.id %}">{{ personagem }}</a>
+            </th>
+            <td>{{ personagem.descricao }}</td>
+            <th scope="row">
+                <a href="{% url 'delete_personagens' personagem.id %}">Deletar</a>
+            </th>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+<a href="{% url 'create_personagens' %}" class="btn btn-info">Novo</a>
+
+{% endblock %}

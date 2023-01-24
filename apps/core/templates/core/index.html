@@ -5,14 +5,13 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-        Bem vindo a página HOME 1
+        Olá {{ request.user }}
     </div>
     <div class="col-sm">
-        Olá {{ request.user }}
         <a href="{% url 'list_jogos' %}">Gerenciar Jogos</a>
     </div>
     <div class="col-sm">
-        Bem vindo a página HOME 3
+        <a href="{% url 'list_personagens' %}">Gerenciar Personagens</a>
     </div>
   </div>
 </div>
