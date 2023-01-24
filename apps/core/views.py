@@ -1,5 +1,8 @@
 from django.shortcuts import render
-
+from apps.jogos.models import Jogo
 
 def home(request):
-    return render(request, 'core/index.html')
+    data = {}
+    data['jogo', 'request'] = Jogo.objects.last()
+
+    return render(request, 'core/index.html', data)

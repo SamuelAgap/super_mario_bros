@@ -8,7 +8,8 @@
         Bem vindo a página HOME 1
     </div>
     <div class="col-sm">
-        Bem vindo a página HOME 2
+        Olá {{ request.user }}
+        <a href="{% url 'list_jogos' %}">Gerenciar Jogos</a>
     </div>
     <div class="col-sm">
         Bem vindo a página HOME 3

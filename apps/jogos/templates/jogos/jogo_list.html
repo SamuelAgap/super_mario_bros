@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome do Jogo</th>
+            <th scope="col">---------</th>
+        </tr>
+    </thead>
+    {% for jogo in object_list %}
+    <tbody>
+        <tr>
+            <td>{{ jogo.id }}</td>
+            <th scope="row">
+                <a href="{% url 'update_jogos' jogo.id %}">{{ jogo }}</a>
+            </th>
+            <th scope="row">
+                <a href="{% url 'delete_jogos' jogo.id %}">Deletar</a>
+            </th>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+<a href="{% url 'create_jogos' %}" class="btn btn-info">Novo</a>
+
+{% endblock %}
