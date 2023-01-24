@@ -4,20 +4,7 @@
 {% block title %} Cadastrar Personagem | Super Mario Bros {% endblock %}
 
 {% block main %}
-
   <div class="container bg_container float-left">
-      {% if object %}
-      <h1>Editar Personagem</h1>
-      <div class="m-2 float-left col-md-7">
-          <form method="POST" enctype="multipart/form-data" class="forms">
-            {% csrf_token %}
-            {% bootstrap_form form %}
-              <br>
-            {% buttons %}
-            <button type="submit" class="btn btn-primary">Editar</button>
-            {% endbuttons %}
-          </form>
-      {% else %}
       <h1>Cadastrar Personagem</h1>
       <div class="m-2 float-left col-md-7">
           <form method="POST" enctype="multipart/form-data" class="forms">
@@ -25,10 +12,9 @@
             {% bootstrap_form form %}
               <br>
             {% buttons %}
-            <button type="submit" class="btn btn-primary">Salvar alterações</button>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
             {% endbuttons %}
-          </form>
-      {% endif %}
+            </form>
       </div>
   </div>
 {% endblock %}
