@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %} Fases | Super Mario Bros {% endblock %}
+
 {% block main %}
 
 <table class="table table-striped">
@@ -28,5 +30,5 @@
 </table>
 
 <a href="{% url 'create_fases' %}" class="btn btn-info">Novo</a>
-
+<br><br>
 {% endblock %}

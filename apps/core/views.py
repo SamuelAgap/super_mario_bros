@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 from apps.jogos.models import Jogo
 
-def home(request):
-    data = {}
-    data['jogo', 'request'] = Jogo.objects.last()
 
-    return render(request, 'core/index.html', data)
+class home(ListView):
+    model = Jogo
+    template_name = 'home.html'
+
+    def get_queryset(self):
+        return Jogo.objects.all().order_by('-pk')

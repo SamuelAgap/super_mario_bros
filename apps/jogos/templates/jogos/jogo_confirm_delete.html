@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
+{% block title %} Excluir | Super Mario Bros {% endblock %}
 {% block main %}
 
 <form method="post">
@@ -10,8 +12,9 @@
     <h2>Todas a fases relacionadas ao jogo serão excluídas.</h2>
     {% endif %}
     {{ form }}
-
+    <br>
     <button type="submit" class="btn btn-danger">Confirmar</button>
+    <br><br>
 </form>
 
 

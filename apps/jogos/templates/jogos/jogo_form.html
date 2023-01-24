@@ -1,13 +1,42 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block title %} Cadastrar Jogo | Super Mario Bros {% endblock %}
 
 {% block main %}
-    <form method="post">
-        {% csrf_token %}
 
-        {{ form }}
-        <br>
-        <button type="submit" class="btn btn-info">Salvar</button>
-    </form>
-    <br>
+    {% if object%}
+        <div class="container bg_container float-left">
+              <h1>Editar Jogo</h1>
+              <div class="m-2 float-left col-md-7">
+                  <form method="POST" enctype="multipart/form-data" class="forms">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                      <br>
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">Salvar alterações</button>
+                    {% endbuttons %}
+                  </form>
+              </div>
+        </div>
+    {% else %}
+        <div class="container bg_container float-left">
+            <h1>Cadastrar Jogo</h1>
+            <div class="m-2 float-left col-md-7">
+                <form method="POST" enctype="multipart/form-data" class="forms">
+                    {% csrf_token %}
+                    {% bootstrap_form form %}
+                    <br>
+                    {% buttons %}
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                    {% endbuttons %}
+                </form>
+            </div>
+        </div>
+    {% endif %}
 
 {% endblock %}
+
+
+
+
