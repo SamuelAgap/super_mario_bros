@@ -4,17 +4,33 @@
 {% block title %} Cadastrar Fase | Super Mario Bros {% endblock %}
 
 {% block main %}
+
   <div class="container bg_container float-left">
-      <h1>Cadastrar Fase</h1>
+
+      {% if object %}
+      <h1>Editar Fase</h1>
       <div class="m-2 float-left col-md-7">
           <form method="POST" enctype="multipart/form-data" class="forms">
             {% csrf_token %}
             {% bootstrap_form form %}
               <br>
             {% buttons %}
-            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="submit" class="btn btn-primary">Salvar alterações</button>
             {% endbuttons %}
-            </form>
+          </form>
+      {% else %}
+          <h1>Cadastrar Fase</h1>
+          <div class="m-2 float-left col-md-7">
+              <form method="POST" enctype="multipart/form-data" class="forms">
+                  {% csrf_token %}
+                  {% bootstrap_form form %}
+                  <br>
+                  {% buttons %}
+                  <button type="submit" class="btn btn-primary">Cadastrar</button>
+                  {% endbuttons %}
+              </form>
+      {% endif %}
       </div>
   </div>
+
 {% endblock %}

@@ -12,12 +12,12 @@ class JogosList(ListView):
 
 class JogosUpdate(UpdateView):
     model = Jogo
-    fields = ['nome', 'ano', 'vendas', 'estilo', 'descricao']
+    fields = ['nome', 'ano', 'vendas', 'estilo', 'descricao', 'imagem']
 
 
 class JogosCreate(CreateView):
     model = Jogo
-    fields = ['nome', 'ano', 'vendas', 'estilo', 'descricao']
+    fields = ['nome', 'ano', 'vendas', 'estilo', 'descricao', 'imagem']
 
     def form_valid(self, form):
         return super(JogosCreate, self).form_valid(form)
