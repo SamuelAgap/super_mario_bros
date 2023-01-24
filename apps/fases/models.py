@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from apps.jogos.models import Jogo
 
 
@@ -8,3 +10,7 @@ class Fase(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+    def get_absolute_url(self):
+        return reverse('list_fases')

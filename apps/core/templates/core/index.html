@@ -5,7 +5,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-        Olá {{ request.user }}
+        <a href="{% url 'list_fases' %}">Gerenciar Fases</a>
     </div>
     <div class="col-sm">
         <a href="{% url 'list_jogos' %}">Gerenciar Jogos</a>

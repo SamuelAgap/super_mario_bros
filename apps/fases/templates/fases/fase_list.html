@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome da Fase</th>
+            <th scope="col">Jogo</th>
+            <th scope="col">---------</th>
+        </tr>
+    </thead>
+    {% for fase in object_list %}
+    <tbody>
+        <tr>
+            <td>{{ fase.id }}</td>
+            <th scope="row">
+                <a href="{% url 'update_fases' fase.id %}">{{ fase }}</a>
+            </th>
+            <td>{{ fase.jogo }}</td>
+            <th scope="row">
+                <a href="{% url 'delete_fases' fase.id %}">Deletar</a>
+            </th>
+        </tr>
+    </tbody>
+    {% endfor %}
+</table>
+
+<a href="{% url 'create_fases' %}" class="btn btn-info">Novo</a>
+
+{% endblock %}
